@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		9A423AE624B6625C003762EC /* ZoweSDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A423AE524B6625C003762EC /* ZoweSDK.swift */; };
+		9A5EB59524BC74E100D45400 /* Console.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5EB59424BC74E100D45400 /* Console.swift */; };
+		9A5EB59724BC752300D45400 /* Files.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5EB59624BC752300D45400 /* Files.swift */; };
+		9A5EB59924BC755B00D45400 /* Jobs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5EB59824BC755B00D45400 /* Jobs.swift */; };
+		9A5EB59B24BC759000D45400 /* Tso.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5EB59A24BC759000D45400 /* Tso.swift */; };
 		9A96F08724BBC4DC0013E605 /* Zosmf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A96F08624BBC4DC0013E605 /* Zosmf.swift */; };
 		9A96F08924BBC55C0013E605 /* ZosmfError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A96F08824BBC55C0013E605 /* ZosmfError.swift */; };
 		9A96F08B24BBC5E80013E605 /* ZosmfApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A96F08A24BBC5E80013E605 /* ZosmfApi.swift */; };
@@ -31,6 +35,10 @@
 /* Begin PBXFileReference section */
 		9A423AE224B6625C003762EC /* libzoweSDK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libzoweSDK.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A423AE524B6625C003762EC /* ZoweSDK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoweSDK.swift; sourceTree = "<group>"; };
+		9A5EB59424BC74E100D45400 /* Console.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Console.swift; sourceTree = "<group>"; };
+		9A5EB59624BC752300D45400 /* Files.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Files.swift; sourceTree = "<group>"; };
+		9A5EB59824BC755B00D45400 /* Jobs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jobs.swift; sourceTree = "<group>"; };
+		9A5EB59A24BC759000D45400 /* Tso.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tso.swift; sourceTree = "<group>"; };
 		9A96F08624BBC4DC0013E605 /* Zosmf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Zosmf.swift; sourceTree = "<group>"; };
 		9A96F08824BBC55C0013E605 /* ZosmfError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZosmfError.swift; sourceTree = "<group>"; };
 		9A96F08A24BBC5E80013E605 /* ZosmfApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZosmfApi.swift; sourceTree = "<group>"; };
@@ -69,6 +77,7 @@
 		9A423AE424B6625C003762EC /* zoweSDK */ = {
 			isa = PBXGroup;
 			children = (
+				9A5EB59324BC73D600D45400 /* console */,
 				9ACE1F8224B664D200C72782 /* files */,
 				9ACE1F8324B664DD00C72782 /* jobs */,
 				9ACE1F8524B6654700C72782 /* tso */,
@@ -79,9 +88,18 @@
 			path = zoweSDK;
 			sourceTree = "<group>";
 		};
+		9A5EB59324BC73D600D45400 /* console */ = {
+			isa = PBXGroup;
+			children = (
+				9A5EB59424BC74E100D45400 /* Console.swift */,
+			);
+			path = console;
+			sourceTree = "<group>";
+		};
 		9ACE1F8224B664D200C72782 /* files */ = {
 			isa = PBXGroup;
 			children = (
+				9A5EB59624BC752300D45400 /* Files.swift */,
 			);
 			path = files;
 			sourceTree = "<group>";
@@ -89,6 +107,7 @@
 		9ACE1F8324B664DD00C72782 /* jobs */ = {
 			isa = PBXGroup;
 			children = (
+				9A5EB59824BC755B00D45400 /* Jobs.swift */,
 			);
 			path = jobs;
 			sourceTree = "<group>";
@@ -104,6 +123,7 @@
 		9ACE1F8524B6654700C72782 /* tso */ = {
 			isa = PBXGroup;
 			children = (
+				9A5EB59A24BC759000D45400 /* Tso.swift */,
 			);
 			path = tso;
 			sourceTree = "<group>";
@@ -178,11 +198,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A5EB59B24BC759000D45400 /* Tso.swift in Sources */,
 				9A96F08924BBC55C0013E605 /* ZosmfError.swift in Sources */,
 				9A423AE624B6625C003762EC /* ZoweSDK.swift in Sources */,
+				9A5EB59724BC752300D45400 /* Files.swift in Sources */,
 				9A96F08B24BBC5E80013E605 /* ZosmfApi.swift in Sources */,
+				9A5EB59524BC74E100D45400 /* Console.swift in Sources */,
 				9A96F08724BBC4DC0013E605 /* Zosmf.swift in Sources */,
 				9A96F09124BBC6DA0013E605 /* ZosmfRequestHandler.swift in Sources */,
+				9A5EB59924BC755B00D45400 /* Jobs.swift in Sources */,
 				9A96F08D24BBC6220013E605 /* ZosmfConnection.swift in Sources */,
 				9A96F08F24BBC67A0013E605 /* ZosmfProfile.swift in Sources */,
 			);

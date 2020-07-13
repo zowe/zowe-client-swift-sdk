@@ -22,6 +22,18 @@ public class ZoweSDK {
     
     // MARK: - ZoweSDK public members
     
+    /// z/OSMF Console API object
+    public let console: Console
+    
+    /// z/OSMF Data Sets API class
+    public let files: Files
+    
+    /// z/OSMF Jobs API class
+    public let jobs: Jobs
+    
+    /// z/OSMF TSO API class
+    public let tso: Tso
+    
     /// z/OSMF API information retrieval service object
     public let zosmf: Zosmf
     
@@ -31,6 +43,10 @@ public class ZoweSDK {
     /// - Parameter connection: z/OSMF API connection object
     private init(_ connection: ZosmfConnection) {
         self.connection = connection
+        console = Console(connection)
+        files = Files(connection)
+        jobs = Jobs(connection)
+        tso = Tso(connection)
         zosmf = Zosmf(connection)
     }
     

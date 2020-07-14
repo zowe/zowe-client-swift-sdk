@@ -29,13 +29,15 @@ public class Zosmf: ZosmfApi {
     // MARK: - Zosmf public methods
     
     /// Launches request to retrieve information about z/﻿OSMF on a particular z/OS system with the following HTTP method and URI path: GET /zosmf/info
-    /// - Returns: A JSON response from z/OSMF information retrieval service with the version and other details about the instance of z/﻿OSMF running on a particular system
+    /// - Parameters:
+    ///   - onCompletion: Closure with a JSON response from z/OSMF information retrieval service with the version and other details about the instance of z/﻿OSMF running on a particular system. If an error occurs, the response message contains its description.
+    ///   - response: The JSON response from z/OS system with the result of the operation or an error description.
     /// - See Also: [Retrieve z/﻿OSMF information](https://www.ibm.com/support/knowledgecenter/SSLTBW_2.4.0/com.ibm.zos.v2r4.izua700/izuprog_API_GetRetrieveVersionInfo.htm)
     public func getInfo(
         onCompletion: @escaping (_ response: String) -> Void
     ) {
-        requestHandler.performRequest(.GET, requestArguments) {
-            response in onCompletion(response)
+        requestHandler.performRequest(.GET, requestArguments) { response in
+            onCompletion(response)
         }
     }
 }

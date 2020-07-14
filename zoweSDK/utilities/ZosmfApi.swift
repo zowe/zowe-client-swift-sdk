@@ -27,12 +27,13 @@ public class ZosmfApi {
     private var defaultHeaders: Dictionary<String, String> {
         [
             "Authorization": "Basic " + encodedCredentials,
-            "Content-type": "application/json; charset=UTF-8",
+            "Content-Type": "application/json; charset=UTF-8",
             "X-CSRF-ZOSMF-HEADER": "true"
         ]
     }
     
     /// Base64 encoded credentials in <mainframeId>:<password> format
+    /// - See Also: [Using the z/OSMF REST services :: Basic authentication](https://www.ibm.com/support/knowledgecenter/SSLTBW_2.4.0/com.ibm.zos.v2r4.izua700/IZUHPINFO_RESTServices.htm#IZUHPINFO_RESTServices__basicauth)
     private var encodedCredentials: String {
         let credentials = connection.zosmfUser + ":" + connection.zosmfPassword
         let credentialsData = credentials.data(using: .utf8)
@@ -44,25 +45,26 @@ public class ZosmfApi {
         return credentialsEncoded
     }
     
+    // MARK: - ZosmfApi internal fields
+    
     /// z/OSMF full URL endpoint
-    private var requestEndpoint: URL {
-        let baseUrl = connection.zosmfHost
-        let service =  defaultServiceUrl
-        let url = "https://" + baseUrl + service
-        guard let verifiedUrl = URL(string: url) else {
+    internal var requestEndpoint: URL {
+        var urlComponents = URLComponents()
+        urlComponents.scheme = "https"
+        urlComponents.percentEncodedHost = connection.zosmfHost
+        urlComponents.path = defaultServiceUrl
+        guard let verifiedUrl = urlComponents.url else {
             fatalError(ZosmfError.invalidUrlAddress.errorDescription!)
         }
-        
         return verifiedUrl
     }
     
-    // MARK: - ZosmfApi internal fields
-    
     /// HTTPS request default arguments
-    internal var requestArguments: (url: URL, headers: Dictionary<String, String>) {
+    internal var requestArguments: (url: URL, headers: Dictionary<String, String>, body: Any?) {
         (
             requestEndpoint,
-            defaultHeaders
+            defaultHeaders,
+            nil
         )
     }
     
@@ -74,7 +76,7 @@ public class ZosmfApi {
         )
     }
     
-    /// z/OSMF REST API HTTPS request object
+    /// z/OSMF REST API HTTP request object
     internal var requestHandler: ZosmfRequestHandler {
         ZosmfRequestHandler(connection, sessionArguments)
     }

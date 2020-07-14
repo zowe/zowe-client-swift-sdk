@@ -41,7 +41,9 @@ public class ZoweSDK {
     
     /// ZoweSDK object private constructor
     /// - Parameter connection: z/OSMF API connection object
-    private init(_ connection: ZosmfConnection) {
+    private init(
+        _ connection: ZosmfConnection
+    ) {
         self.connection = connection
         console = Console(connection)
         files = Files(connection)

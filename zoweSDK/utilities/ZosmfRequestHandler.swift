@@ -54,9 +54,10 @@ internal class ZosmfRequestHandler: NSObject, URLSessionDelegate {
     ///   - httpMethod: The HTTP request method that should be used
     ///   - requestArguments: The dictionary containing the HTTP request arguments
     ///   - onCompletion: The closure with the validated JSON response
+    ///   - response: The JSON response from z/OS system with the result of the operation or an error description.
     internal func performRequest(
         _ httpMethod: ValidMethods,
-        _ requestArguments: (url: URL, headers: Dictionary<String, String>),
+        _ requestArguments: (url: URL, headers: Dictionary<String, String>, body: Any?),
         onCompletion: @escaping (_ response: String) -> Void
     ) {
         let configuration = URLSessionConfiguration.default
@@ -68,6 +69,19 @@ internal class ZosmfRequestHandler: NSObject, URLSessionDelegate {
         request.timeoutInterval = sessionArguments.timeout
         requestArguments.headers.forEach {
             request.setValue($0.value, forHTTPHeaderField: $0.key)
+        }
+        if requestArguments.headers["Content-Type"]?.contains("text/plain") == true,
+            let body = requestArguments.body as? String {
+            request.httpBody = Data(body.utf8)
+        }
+        if requestArguments.headers["Content-Type"]?.contains("application/json") == true,
+            let body = requestArguments.body as? [String: Any] {
+            do {
+                request.httpBody = try JSONSerialization.data(withJSONObject: body)
+            } catch {
+                onCompletion(ZosmfError.invalidHttpBody(reason: error.localizedDescription).errorDescription!)
+                return
+            }
         }
         
         let task = session.dataTask(with: request, completionHandler: { [weak self] data, response, error in

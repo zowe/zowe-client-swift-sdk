@@ -20,6 +20,7 @@ internal enum ZosmfError: LocalizedError {
     case zoweProfileFields(keys: Set<String>)
     case base64EncodedString
     case invalidUrlAddress
+    case invalidHttpBody(reason: String)
     case httpStatus(code: Int)
     
     /// A brief message describing what kind of Zowe SDK error occurred
@@ -33,6 +34,8 @@ internal enum ZosmfError: LocalizedError {
             return "Base64 credentials encoding error"
         case .invalidUrlAddress:
             return "Invalid URL address error"
+        case let .invalidHttpBody(reason):
+            return "HTTP request body error: " + reason
         case let .httpStatus(code):
             return code.httpDescription()
         }

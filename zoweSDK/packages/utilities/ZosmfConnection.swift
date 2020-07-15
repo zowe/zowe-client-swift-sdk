@@ -1,5 +1,5 @@
 //
-//  ZosmfConnection.swift
+//  ZOSConnection.swift
 //  Zowe SDK
 //
 //  This program and the accompanying materials are made available under the terms of the
@@ -12,8 +12,8 @@
 
 import Foundation
 
-/// z/OSMF API connection struct
-internal struct ZosmfConnection {
+/// z/OS REST API connection struct
+internal struct ZOSConnection {
     
     // MARK: - ZosmfConnection internal members
     

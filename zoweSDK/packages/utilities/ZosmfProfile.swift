@@ -33,10 +33,10 @@ internal struct ZosmfProfile {
     // MARK: - ZosmfProfile internal methods
     
     /// Load z/OSMF connection details from Zowe z/OSMF profile
-    /// - Returns: z/OSMF API connection object
-    internal func load() -> ZosmfConnection {
+    /// - Returns: z/OS REST API connection object
+    internal func load() -> ZOSConnection {
         guard let profileYaml = UserDefaults.standard.dictionary(forKey: profileName) else {
-            fatalError(ZosmfError.zoweProfile(name: profileName).errorDescription!)
+            fatalError(ZOSError.zoweProfile(name: profileName).errorDescription!)
         }
         
         guard var zosmfHost = profileYaml[RequiredFields.host.rawValue] as? String,
@@ -45,14 +45,14 @@ internal struct ZosmfProfile {
             let requiredFields = Set(RequiredFields.allCases.map( { $0.rawValue } ))
             let profileYamlFields = Set(profileYaml.keys)
             let absentFields = requiredFields.subtracting(profileYamlFields)
-            fatalError(ZosmfError.zoweProfileFields(keys: absentFields).errorDescription!)
+            fatalError(ZOSError.zoweProfileFields(keys: absentFields).errorDescription!)
         }
         
         if let zosmfPort = profileYaml[OptionalFields.port.rawValue] as? String {
             zosmfHost += ":" + zosmfPort
         }
         
-        return ZosmfConnection(
+        return ZOSConnection(
             zosmfHost: zosmfHost,
             zosmfUser: zosmfUser,
             zosmfPassword: zosmfPassword

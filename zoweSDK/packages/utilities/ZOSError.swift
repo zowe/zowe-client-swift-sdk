@@ -1,5 +1,5 @@
 //
-//  ZosmfError.swift
+//  ZOSError.swift
 //  Zowe SDK
 //
 //  This program and the accompanying materials are made available under the terms of the
@@ -12,10 +12,10 @@
 
 import Foundation
 
-// MARK: - ZosmfError enumeration
+// MARK: - ZOSError enumeration
 
-/// z/OSMF error helper
-internal enum ZosmfError: LocalizedError {
+/// Enumerated type that describes the different kinds of errors
+internal enum ZOSError: LocalizedError {
     case zoweProfile(name: String)
     case zoweProfileFields(keys: Set<String>)
     case base64EncodedString
@@ -42,7 +42,7 @@ internal enum ZosmfError: LocalizedError {
     }
 }
 
-// MARK: - ZosmfError Int extension
+// MARK: - ZOSError Int extension
 
 fileprivate extension Int {
     /// The HTTP response status code description

@@ -17,38 +17,38 @@ public class ZoweSDK {
     
     // MARK: - ZoweSDK private members
     
-    /// z/OSMF API connection object
-    private let connection: ZosmfConnection
+    /// z/OS REST API connection object
+    private let connection: ZOSConnection
     
     // MARK: - ZoweSDK public members
     
-    /// z/OSMF Console API object
-    public let console: Console
+    /// z/OS Console REST API object
+    public let console: ZOSConsole
     
-    /// z/OSMF Data Sets API class
-    public let files: Files
+    /// z/OS Files REST API class
+    public let files: ZOSFiles
     
-    /// z/OSMF Jobs API class
-    public let jobs: Jobs
+    /// z/OS Jobs REST API class
+    public let jobs: ZOSJobs
     
-    /// z/OSMF TSO API class
-    public let tso: Tso
+    /// z/OS TSO REST API class
+    public let tso: ZOSTso
     
-    /// z/OSMF API information retrieval service object
+    /// z/OSMF REST API information retrieval service object
     public let zosmf: Zosmf
     
     // MARK: - ZoweSDK constructors
     
     /// ZoweSDK object private constructor
-    /// - Parameter connection: z/OSMF API connection object
+    /// - Parameter connection: z/OS REST API connection object
     private init(
-        _ connection: ZosmfConnection
+        _ connection: ZOSConnection
     ) {
         self.connection = connection
-        console = Console(connection)
-        files = Files(connection)
-        jobs = Jobs(connection)
-        tso = Tso(connection)
+        console = ZOSConsole(connection)
+        files = ZOSFiles(connection)
+        jobs = ZOSJobs(connection)
+        tso = ZOSTso(connection)
         zosmf = Zosmf(connection)
     }
     
@@ -62,7 +62,7 @@ public class ZoweSDK {
         zosmfUser: String,
         zosmfPassword: String
     ) {
-        let connection = ZosmfConnection(
+        let connection = ZOSConnection(
             zosmfHost: zosmfHost,
             zosmfUser: zosmfUser,
             zosmfPassword: zosmfPassword

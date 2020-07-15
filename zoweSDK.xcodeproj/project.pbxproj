@@ -8,16 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		9A423AE624B6625C003762EC /* ZoweSDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A423AE524B6625C003762EC /* ZoweSDK.swift */; };
-		9A5EB59524BC74E100D45400 /* Console.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5EB59424BC74E100D45400 /* Console.swift */; };
-		9A5EB59724BC752300D45400 /* Files.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5EB59624BC752300D45400 /* Files.swift */; };
-		9A5EB59924BC755B00D45400 /* Jobs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5EB59824BC755B00D45400 /* Jobs.swift */; };
-		9A5EB59B24BC759000D45400 /* Tso.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5EB59A24BC759000D45400 /* Tso.swift */; };
+		9A5EB59524BC74E100D45400 /* ZOSConsole.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5EB59424BC74E100D45400 /* ZOSConsole.swift */; };
+		9A5EB59724BC752300D45400 /* ZOSFiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5EB59624BC752300D45400 /* ZOSFiles.swift */; };
+		9A5EB59924BC755B00D45400 /* ZOSJobs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5EB59824BC755B00D45400 /* ZOSJobs.swift */; };
+		9A5EB59B24BC759000D45400 /* ZOSTso.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5EB59A24BC759000D45400 /* ZOSTso.swift */; };
 		9A96F08724BBC4DC0013E605 /* Zosmf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A96F08624BBC4DC0013E605 /* Zosmf.swift */; };
-		9A96F08924BBC55C0013E605 /* ZosmfError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A96F08824BBC55C0013E605 /* ZosmfError.swift */; };
-		9A96F08B24BBC5E80013E605 /* ZosmfApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A96F08A24BBC5E80013E605 /* ZosmfApi.swift */; };
-		9A96F08D24BBC6220013E605 /* ZosmfConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A96F08C24BBC6220013E605 /* ZosmfConnection.swift */; };
+		9A96F08924BBC55C0013E605 /* ZOSError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A96F08824BBC55C0013E605 /* ZOSError.swift */; };
+		9A96F08B24BBC5E80013E605 /* ZOSApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A96F08A24BBC5E80013E605 /* ZOSApi.swift */; };
+		9A96F08D24BBC6220013E605 /* ZOSConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A96F08C24BBC6220013E605 /* ZOSConnection.swift */; };
 		9A96F08F24BBC67A0013E605 /* ZosmfProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A96F08E24BBC67A0013E605 /* ZosmfProfile.swift */; };
-		9A96F09124BBC6DA0013E605 /* ZosmfRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A96F09024BBC6DA0013E605 /* ZosmfRequestHandler.swift */; };
+		9A96F09124BBC6DA0013E605 /* ZOSRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A96F09024BBC6DA0013E605 /* ZOSRequestHandler.swift */; };
+		9AE010A824BE547C0075B8DA /* Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE010A724BE547C0075B8DA /* Create.swift */; };
+		9AE010AC24BE554E0075B8DA /* DatasetTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE010AB24BE554E0075B8DA /* DatasetTypes.swift */; };
+		9AE010AF24BE559C0075B8DA /* Get.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE010AE24BE559C0075B8DA /* Get.swift */; };
+		9AE010B224BE58210075B8DA /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE010B124BE58210075B8DA /* List.swift */; };
+		9AE010B524BE589C0075B8DA /* Delete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE010B424BE589C0075B8DA /* Delete.swift */; };
+		9AE010B824BE59330075B8DA /* Write.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE010B724BE59330075B8DA /* Write.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -35,16 +41,22 @@
 /* Begin PBXFileReference section */
 		9A423AE224B6625C003762EC /* libzoweSDK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libzoweSDK.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A423AE524B6625C003762EC /* ZoweSDK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoweSDK.swift; sourceTree = "<group>"; };
-		9A5EB59424BC74E100D45400 /* Console.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Console.swift; sourceTree = "<group>"; };
-		9A5EB59624BC752300D45400 /* Files.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Files.swift; sourceTree = "<group>"; };
-		9A5EB59824BC755B00D45400 /* Jobs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jobs.swift; sourceTree = "<group>"; };
-		9A5EB59A24BC759000D45400 /* Tso.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tso.swift; sourceTree = "<group>"; };
+		9A5EB59424BC74E100D45400 /* ZOSConsole.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZOSConsole.swift; sourceTree = "<group>"; };
+		9A5EB59624BC752300D45400 /* ZOSFiles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZOSFiles.swift; sourceTree = "<group>"; };
+		9A5EB59824BC755B00D45400 /* ZOSJobs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZOSJobs.swift; sourceTree = "<group>"; };
+		9A5EB59A24BC759000D45400 /* ZOSTso.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZOSTso.swift; sourceTree = "<group>"; };
 		9A96F08624BBC4DC0013E605 /* Zosmf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Zosmf.swift; sourceTree = "<group>"; };
-		9A96F08824BBC55C0013E605 /* ZosmfError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZosmfError.swift; sourceTree = "<group>"; };
-		9A96F08A24BBC5E80013E605 /* ZosmfApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZosmfApi.swift; sourceTree = "<group>"; };
-		9A96F08C24BBC6220013E605 /* ZosmfConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZosmfConnection.swift; sourceTree = "<group>"; };
+		9A96F08824BBC55C0013E605 /* ZOSError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZOSError.swift; sourceTree = "<group>"; };
+		9A96F08A24BBC5E80013E605 /* ZOSApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZOSApi.swift; sourceTree = "<group>"; };
+		9A96F08C24BBC6220013E605 /* ZOSConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZOSConnection.swift; sourceTree = "<group>"; };
 		9A96F08E24BBC67A0013E605 /* ZosmfProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZosmfProfile.swift; sourceTree = "<group>"; };
-		9A96F09024BBC6DA0013E605 /* ZosmfRequestHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZosmfRequestHandler.swift; sourceTree = "<group>"; };
+		9A96F09024BBC6DA0013E605 /* ZOSRequestHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZOSRequestHandler.swift; sourceTree = "<group>"; };
+		9AE010A724BE547C0075B8DA /* Create.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Create.swift; sourceTree = "<group>"; };
+		9AE010AB24BE554E0075B8DA /* DatasetTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatasetTypes.swift; sourceTree = "<group>"; };
+		9AE010AE24BE559C0075B8DA /* Get.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Get.swift; sourceTree = "<group>"; };
+		9AE010B124BE58210075B8DA /* List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
+		9AE010B424BE589C0075B8DA /* Delete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delete.swift; sourceTree = "<group>"; };
+		9AE010B724BE59330075B8DA /* Write.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Write.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,39 +89,35 @@
 		9A423AE424B6625C003762EC /* zoweSDK */ = {
 			isa = PBXGroup;
 			children = (
-				9A5EB59324BC73D600D45400 /* console */,
-				9ACE1F8224B664D200C72782 /* files */,
-				9ACE1F8324B664DD00C72782 /* jobs */,
-				9ACE1F8524B6654700C72782 /* tso */,
-				9ACE1F8624B6656900C72782 /* utilities */,
-				9ACE1F8424B664EC00C72782 /* zosmf */,
+				9AE010AA24BE54D40075B8DA /* packages */,
 				9A423AE524B6625C003762EC /* ZoweSDK.swift */,
 			);
 			path = zoweSDK;
 			sourceTree = "<group>";
 		};
-		9A5EB59324BC73D600D45400 /* console */ = {
+		9A5EB59324BC73D600D45400 /* zosconsole */ = {
 			isa = PBXGroup;
 			children = (
-				9A5EB59424BC74E100D45400 /* Console.swift */,
+				9A5EB59424BC74E100D45400 /* ZOSConsole.swift */,
 			);
-			path = console;
+			path = zosconsole;
 			sourceTree = "<group>";
 		};
-		9ACE1F8224B664D200C72782 /* files */ = {
+		9ACE1F8224B664D200C72782 /* zosfiles */ = {
 			isa = PBXGroup;
 			children = (
-				9A5EB59624BC752300D45400 /* Files.swift */,
+				9AE010A924BE54BA0075B8DA /* methods */,
+				9A5EB59624BC752300D45400 /* ZOSFiles.swift */,
 			);
-			path = files;
+			path = zosfiles;
 			sourceTree = "<group>";
 		};
-		9ACE1F8324B664DD00C72782 /* jobs */ = {
+		9ACE1F8324B664DD00C72782 /* zosjobs */ = {
 			isa = PBXGroup;
 			children = (
-				9A5EB59824BC755B00D45400 /* Jobs.swift */,
+				9A5EB59824BC755B00D45400 /* ZOSJobs.swift */,
 			);
-			path = jobs;
+			path = zosjobs;
 			sourceTree = "<group>";
 		};
 		9ACE1F8424B664EC00C72782 /* zosmf */ = {
@@ -120,24 +128,90 @@
 			path = zosmf;
 			sourceTree = "<group>";
 		};
-		9ACE1F8524B6654700C72782 /* tso */ = {
+		9ACE1F8524B6654700C72782 /* zostso */ = {
 			isa = PBXGroup;
 			children = (
-				9A5EB59A24BC759000D45400 /* Tso.swift */,
+				9A5EB59A24BC759000D45400 /* ZOSTso.swift */,
 			);
-			path = tso;
+			path = zostso;
 			sourceTree = "<group>";
 		};
 		9ACE1F8624B6656900C72782 /* utilities */ = {
 			isa = PBXGroup;
 			children = (
-				9A96F08824BBC55C0013E605 /* ZosmfError.swift */,
-				9A96F08A24BBC5E80013E605 /* ZosmfApi.swift */,
-				9A96F08C24BBC6220013E605 /* ZosmfConnection.swift */,
+				9A96F08A24BBC5E80013E605 /* ZOSApi.swift */,
+				9A96F08C24BBC6220013E605 /* ZOSConnection.swift */,
+				9A96F08824BBC55C0013E605 /* ZOSError.swift */,
+				9A96F09024BBC6DA0013E605 /* ZOSRequestHandler.swift */,
 				9A96F08E24BBC67A0013E605 /* ZosmfProfile.swift */,
-				9A96F09024BBC6DA0013E605 /* ZosmfRequestHandler.swift */,
 			);
 			path = utilities;
+			sourceTree = "<group>";
+		};
+		9AE010A624BE54420075B8DA /* create */ = {
+			isa = PBXGroup;
+			children = (
+				9AE010A724BE547C0075B8DA /* Create.swift */,
+				9AE010AB24BE554E0075B8DA /* DatasetTypes.swift */,
+			);
+			path = create;
+			sourceTree = "<group>";
+		};
+		9AE010A924BE54BA0075B8DA /* methods */ = {
+			isa = PBXGroup;
+			children = (
+				9AE010A624BE54420075B8DA /* create */,
+				9AE010B324BE58890075B8DA /* delete */,
+				9AE010AD24BE55820075B8DA /* get */,
+				9AE010B024BE58000075B8DA /* list */,
+				9AE010B624BE590A0075B8DA /* write */,
+			);
+			path = methods;
+			sourceTree = "<group>";
+		};
+		9AE010AA24BE54D40075B8DA /* packages */ = {
+			isa = PBXGroup;
+			children = (
+				9A5EB59324BC73D600D45400 /* zosconsole */,
+				9ACE1F8224B664D200C72782 /* zosfiles */,
+				9ACE1F8324B664DD00C72782 /* zosjobs */,
+				9ACE1F8524B6654700C72782 /* zostso */,
+				9ACE1F8624B6656900C72782 /* utilities */,
+				9ACE1F8424B664EC00C72782 /* zosmf */,
+			);
+			path = packages;
+			sourceTree = "<group>";
+		};
+		9AE010AD24BE55820075B8DA /* get */ = {
+			isa = PBXGroup;
+			children = (
+				9AE010AE24BE559C0075B8DA /* Get.swift */,
+			);
+			path = get;
+			sourceTree = "<group>";
+		};
+		9AE010B024BE58000075B8DA /* list */ = {
+			isa = PBXGroup;
+			children = (
+				9AE010B124BE58210075B8DA /* List.swift */,
+			);
+			path = list;
+			sourceTree = "<group>";
+		};
+		9AE010B324BE58890075B8DA /* delete */ = {
+			isa = PBXGroup;
+			children = (
+				9AE010B424BE589C0075B8DA /* Delete.swift */,
+			);
+			path = delete;
+			sourceTree = "<group>";
+		};
+		9AE010B624BE590A0075B8DA /* write */ = {
+			isa = PBXGroup;
+			children = (
+				9AE010B724BE59330075B8DA /* Write.swift */,
+			);
+			path = write;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,16 +272,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9A5EB59B24BC759000D45400 /* Tso.swift in Sources */,
-				9A96F08924BBC55C0013E605 /* ZosmfError.swift in Sources */,
+				9A5EB59B24BC759000D45400 /* ZOSTso.swift in Sources */,
+				9A96F08924BBC55C0013E605 /* ZOSError.swift in Sources */,
 				9A423AE624B6625C003762EC /* ZoweSDK.swift in Sources */,
-				9A5EB59724BC752300D45400 /* Files.swift in Sources */,
-				9A96F08B24BBC5E80013E605 /* ZosmfApi.swift in Sources */,
-				9A5EB59524BC74E100D45400 /* Console.swift in Sources */,
+				9AE010A824BE547C0075B8DA /* Create.swift in Sources */,
+				9A5EB59724BC752300D45400 /* ZOSFiles.swift in Sources */,
+				9A96F08B24BBC5E80013E605 /* ZOSApi.swift in Sources */,
+				9A5EB59524BC74E100D45400 /* ZOSConsole.swift in Sources */,
+				9AE010AC24BE554E0075B8DA /* DatasetTypes.swift in Sources */,
+				9AE010B224BE58210075B8DA /* List.swift in Sources */,
 				9A96F08724BBC4DC0013E605 /* Zosmf.swift in Sources */,
-				9A96F09124BBC6DA0013E605 /* ZosmfRequestHandler.swift in Sources */,
-				9A5EB59924BC755B00D45400 /* Jobs.swift in Sources */,
-				9A96F08D24BBC6220013E605 /* ZosmfConnection.swift in Sources */,
+				9AE010B524BE589C0075B8DA /* Delete.swift in Sources */,
+				9A96F09124BBC6DA0013E605 /* ZOSRequestHandler.swift in Sources */,
+				9AE010AF24BE559C0075B8DA /* Get.swift in Sources */,
+				9AE010B824BE59330075B8DA /* Write.swift in Sources */,
+				9A5EB59924BC755B00D45400 /* ZOSJobs.swift in Sources */,
+				9A96F08D24BBC6220013E605 /* ZOSConnection.swift in Sources */,
 				9A96F08F24BBC67A0013E605 /* ZosmfProfile.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

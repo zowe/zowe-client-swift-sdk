@@ -16,9 +16,9 @@ import Foundation
 public enum DatasetTypes {
     case binary, c, classic, partitioned, sequential
     
-    /// Specifies all the default attributes to create non-vsam data sets: binary, c, classic, partitioned and sequential ones
+    /// Specifies all the default attributes to create non-vsam data sets: binary, C, classic, partitioned and sequential ones
     /// - Returns: Default attributes to be used as options for the different types of data sets that can be created
-    /// - Note: Technically, binary, c and classic data sets are all partitioned data sets. They just have different default attributes.
+    /// - Note: Technically, binary, C and classic data sets are all partitioned data sets. They just have different default attributes.
     internal func defaultAttributes() -> [String: Any] {
         switch self {
         case .binary:

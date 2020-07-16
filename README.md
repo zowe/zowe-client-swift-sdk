@@ -46,8 +46,9 @@ let z = ZoweSDK(zosmfProfile: "<profile name>")
 
 Currently, the Zowe Swift Client SDK supports the following interfaces:
 
-* z/OSMF information retrieval service 
-* Data sets and data set members creation/listing/reading/writing/deletion 
+* [z/OSMF information retrieval service](#zosmf) 
+* [Data sets and data set members creation/listing/reading/writing/deletion](#data-sets) 
+* [Jobs listing/submission/status retrieval/deletion, job spool files listing, job spool files/JCL contents retrieval](#jobs) 
 
 ## z/OSMF 
 
@@ -59,7 +60,7 @@ z.zosmf.getInfo() { response in
 }
 ```
 
-Fore more details on z/OSMF package usage, follow this [README.md](zoweSDK/packages/zosmf/README.md)
+Fore more details on z/OSMF for Zowe SDK package usage, follow this [README.md](zoweSDK/packages/zosmf/README.md)
 
 ## Data sets 
 
@@ -69,12 +70,30 @@ To create a data set (binary, C, classic, partitioned and sequential data set cr
 z.files.createDsn(
     datasetName: "<data set name>", 
     datasetType: .<binary|c|classic|partitioned|sequential>, 
-    datasetAttributes: [<attributes dictionary>]) { response in
+    datasetAttributes: [<attributes dictionary>]
+) { response in
     print(response)
 }
 ```
 
-Fore more details on z/OSMF package usage, follow this [README.md](zoweSDK/packages/zosfiles/README.md)
+Fore more details on z/OS Files for Zowe SDK package usage, follow this [README.md](zoweSDK/packages/zosfiles/README.md)
+
+## Jobs 
+
+To list the jobs for an owner, prefix, max-jobs and/or user-correlator:
+
+```swift
+z.jobs.listJobs(
+    owner: [<owner>],
+    prefix: [<prefix>],
+    maxJobs: [<max-jobs>],
+    userCorrelator: [<user-correlator>]
+) { response in
+    print(response)
+}
+```
+
+Fore more details on z/OS Jobs for Zowe SDK package usage, follow this [README.md](zoweSDK/packages/zosjobs/README.md)
 
 # Acknowledgments
 

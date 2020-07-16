@@ -81,6 +81,11 @@ public class ZOSApi {
         ZOSRequestHandler(connection, sessionArguments)
     }
     
+    /// The mainframe Id for the z/OS REST API
+    internal var zosmfUser: String {
+        connection.zosmfUser
+    }
+    
     // MARK: - ZOSApi constructor
     
     /// ZosmfApi object constructor
@@ -93,5 +98,25 @@ public class ZOSApi {
     ) {
         self.connection = connection
         self.defaultServiceUrl = defaultUrl
+    }
+    
+    // MARK: - ZOSApi internal methods
+    
+    /// Prepares URL object and verifies its validity
+    /// - Parameters:
+    ///   - path: URL path component to append.
+    ///   - queryItems: Optional parameter for URL query items to append if any.
+    /// - Returns: Verified URL object to use for HTTP request.
+    internal func prepareUrl(
+        path: String = "",
+        queryItems: [URLQueryItem]? = nil
+    ) -> URL {
+        var urlComponents = URLComponents()
+        urlComponents.path = path
+        urlComponents.queryItems = queryItems
+        guard let verifiedUrl = urlComponents.url(relativeTo: requestArguments.url) else {
+            fatalError(ZOSError.invalidUrlAddress.errorDescription!)
+        }
+        return verifiedUrl
     }
 }

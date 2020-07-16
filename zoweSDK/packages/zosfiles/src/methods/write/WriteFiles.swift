@@ -1,5 +1,5 @@
 //
-//  Write.swift
+//  WriteFiles.swift
 //  Zowe SDK
 //
 //  This program and the accompanying materials are made available under the terms of the
@@ -20,6 +20,7 @@ extension ZOSFiles {
     ///   - contents: The contents to write to the target data set.
     ///   - onCompletion: Closure with a JSON response from z/OS system with the result of the operation. If an error occurs, the response message contains its description.
     ///   - response: The JSON response from z/OS system with the result of the operation or an error description.
+    /// - Note: The response message is expected to come with either HTTP 201 or HTTP 204 status code description
     /// - See Also: [Write data to a z/OS data set or member](https://www.ibm.com/support/knowledgecenter/SSLTBW_2.4.0/com.ibm.zos.v2r4.izua700/IZUHPINFO_API_PutWriteDataSet.htm)
     public func writeToDsn(
         datasetName: String,

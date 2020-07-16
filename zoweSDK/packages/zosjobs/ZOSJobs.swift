@@ -21,6 +21,6 @@ public class ZOSJobs: ZOSApi {
     internal init(
         _ connection: ZOSConnection
     ) {
-        super.init(connection, "")
+        super.init(connection, "/zosmf/restjobs/jobs/")
     }
 }

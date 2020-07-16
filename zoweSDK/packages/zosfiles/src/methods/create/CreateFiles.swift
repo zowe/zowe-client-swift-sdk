@@ -1,5 +1,5 @@
 //
-//  Create.swift
+//  CreateFiles.swift
 //  Zowe SDK
 //
 //  This program and the accompanying materials are made available under the terms of the
@@ -27,6 +27,7 @@ extension ZOSFiles {
     ///   3. The remaining characters in each qualifier can be alphabetic, special, or numeric (0 to 9) characters
     ///   4. Each qualifier must be 1 to 8 characters in length
     ///   5. The maximum length of a complete data set name before specifying a member name is 44 characters, including the periods
+    /// - Note: The response message is expected to come with HTTP 201 status code description
     /// - See Also: [Create a sequential and partitioned data set](https://www.ibm.com/support/knowledgecenter/SSLTBW_2.4.0/com.ibm.zos.v2r4.izua700/IZUHPINFO_API_CreateDataSet.htm)
     public func createDsn(
         datasetName: String,

@@ -46,9 +46,9 @@ let z = ZoweSDK(zosmfProfile: "<profile name>")
 
 Currently, the z/OSMF for Zowe SDK supports the following requests:
 
-* z/OSMF information retrieval service 
+* [z/OSMF information retrieval service](#zosmf-request-usage) 
 
-## z/OSMF request usage
+## z/OSMF request usage 
 
 To retrieve information about z/﻿OSMF on a particular z/OS system:
 
@@ -88,7 +88,7 @@ z.zosmf.getInfo() { response in
     }
     
     print(zosmfInfo)
-    /* Prints
+    /* Prints the object representation for the following JSON data
     {"zos_version":"04.27.00","zosmf_port":"10443","zosmf_version":"27","zosmf_hostname":"S0W1.DAL-EBIS.IHOST.COM",
     "plugins":
     [{"pluginVersion":"HSMA240;PH19887P;2020-02-14T03:45:28","pluginDefaultName":"z\/OS Operator Consoles","pluginStatus":"ACTIVE"},

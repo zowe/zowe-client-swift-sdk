@@ -46,11 +46,11 @@ let z = ZoweSDK(zosmfProfile: "<profile name>")
 
 Currently, the z/OS Files for Zowe SDK supports the following requests:
 
-* Data sets creation 
-* Data sets and data set members listing 
-* Data sets and data set members reading 
-* Data sets and data set members writing (can be used to create data set members as well)
-* Data sets and data set members deletion 
+* [Data sets creation](#data-sets-creation) 
+* [Data sets and data set members listing](#data-sets-and-data-set-members-listing) 
+* [Data sets and data set members reading](#data-sets-and-data-set-members-reading) 
+* [Data sets and data set members writing (can be used to create data set members as well)](#data-sets-and-data-set-members-writing) 
+* [Data sets and data set members deletion](#data-sets-and-data-set-members-deletion) 
 
 ## Data sets creation 
 
@@ -60,12 +60,13 @@ To create a data set (binary, C, classic, partitioned and sequential data set cr
 z.files.createDsn(
     datasetName: "<data set name>", 
     datasetType: .<binary|c|classic|partitioned|sequential>, 
-    datasetAttributes: [<attributes dictionary>]) { response in
+    datasetAttributes: [<attributes dictionary>]
+) { response in
     print(response)
 }
 ```
 
-**NOTE**: You can omit data set attributes parameter, then Zowe SDK will use the default attributes for the relevant data set type.
+**NOTE**: You can omit data set attributes parameter, then Zowe SDK will use the default attributes for the relevant data set type. Pay attention at the response description for data sets and data set members creation request (see this method description with option-click on the method name in Xcode IDE).
 
 ## Data sets and data set members listing 
 
@@ -74,7 +75,7 @@ To list the z/OS data sets on a system:
 ```swift
 z.files.listDsn(
     namePattern: "<data set name pattern>"
-    ) { response in
+) { response in
     print(response)
 }
 ```
@@ -85,7 +86,7 @@ To list the z/OS data sets with the full attributes:
 z.files.listDsn(
     namePattern: "<data set name pattern>", 
     listAttributes: true
-    ) { response in
+) { response in
     print(response)
 }
 ```
@@ -95,7 +96,7 @@ To list the members of a z/OS data set:
 ```swift
 z.files.listDsnMembers(
     datasetName: "<data set name>"
-    ) { response in
+) { response in
     print(response)
 }
 ```
@@ -107,7 +108,7 @@ To retrieve the contents of a z/OS data set or member:
 ```swift
 z.files.getDsnContents(
     datasetName: "<data set name>[(<member name>)]"
-    ) { response in
+) { response in
     print(response)
 }
 ```
@@ -120,12 +121,12 @@ To write the contents to a z/OS data set or member:
 z.files.writeToDsn(
     datasetName: "<data set name>[(<member name>)]", 
     contents: "<contents to write>"
-    ) { response in
+) { response in
     print(response)
 }
 ```
 
-**NOTE**: You can use this method to create a member of a partitioned data set and write its contents simultaneously, that is if the *<member name>* doesn't exist, it will be created automatically.
+**NOTE**: You can use this method to create a member of a partitioned data set and write its contents simultaneously, that is if the *<member name>* doesn't exist, it will be created automatically. Pay attention at the response description for data sets and data set members writing request (see this method description with option-click on the method name in Xcode IDE).
 
 ## Data sets and data set members deletion 
 
@@ -134,12 +135,12 @@ To delete a sequential or partitioned data set, or a partitioned data set member
 ```swift
 z.files.deleteDsn(
     datasetName: "<data set name>[(<member name>)]"
-    ) { response in 
+) { response in 
     print(response) 
 }
 ```
 
-**NOTE**: Technically, binary, C and classic data sets are all partitioned ones.
+**NOTE**: Technically, binary, C and classic data sets are all partitioned ones. Pay attention at the response description for data sets and data set members deletion request (see this method description with option-click on the method name in Xcode IDE).
 
 ## Response usage
 
@@ -149,7 +150,7 @@ The result can be either a JSON response from z/OS system with the result of the
 z.files.listDsn(
     namePattern: "Z99998.*", 
     listAttributes: true
-    ) { response in
+) { response in
     
     struct DataSets: Decodable {
         let items: [Dsn]
@@ -184,7 +185,7 @@ z.files.listDsn(
     }
     
     print(datasets.items)
-    /* Prints
+    /* Prints the object representation for the following JSON data
     {"items":[
       {"dsname":"Z99998.CBL","blksz":"32720","catnm":"CATALOG.ZOS3","cdate":"2020/04/29","dev":"3390","dsntp":"LIBRARY","dsorg":"PO-E","edate":"***None***","extx":"1","lrecl":"80","migr":"NO","mvol":"N","ovf":"NO","rdate":"2020/07/14","recfm":"FB","sizex":"15","spacu":"CYLINDERS","used":"32","vol":"VPWRKE","vols":"VPWRKE"},
       {"dsname":"Z99998.DATA","blksz":"27880","catnm":"CATALOG.ZOS3","cdate":"2020/04/29","dev":"3390","dsorg":"PS","edate":"***None***","extx":"1","lrecl":"170","migr":"NO","mvol":"N","ovf":"NO","rdate":"2020/07/08","recfm":"FB","sizex":"1","spacu":"TRACKS","used":"100","vol":"VPWRKE","vols":"VPWRKE"},
@@ -198,7 +199,7 @@ z.files.listDsn(
     
     print(datasets.items.first(where: { $0.dsname == "Z99998.PDS" })?.lrecl) 
     // Prints "80"
-})
+}
 ```
 
 # Acknowledgments

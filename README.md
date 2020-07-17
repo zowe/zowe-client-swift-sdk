@@ -8,6 +8,10 @@ The Zowe Swift Client SDK is an open-source Swift package for z/OSMF REST API. I
 
 ![ZoweClientSwiftSDK](/../screenshots/Scrshots/ZoweClientSwiftSDK01.png?raw=true "ZoweClientSwiftSDK")
 
+# Installation
+
+Fore more details on Zowe SDK debug version installation, follow this [INSTALL.md](INSTALL.md)
+
 # Quickstart
 
 Start by importing the **zoweSDK** class. 

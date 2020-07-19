@@ -12,7 +12,7 @@
 
 import Foundation
 
-public extension ZOSFiles {
+extension ZOSFiles {
     
     /// Launches request to delete sequential and partitioned data sets, or a member of a partitioned data set (PDS or PDSE) with the following HTTP method and URI path: DELETE /zosmf/restfiles/ds/<data_set_name>[(<member_name>)]
     /// - Parameters:

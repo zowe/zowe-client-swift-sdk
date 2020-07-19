@@ -12,7 +12,7 @@
 
 import Foundation
 
-public extension ZOSFiles {
+extension ZOSFiles {
     
     /// Launches request to retrieve a list of data sets based on the given pattern with the following HTTP method and URI path: GET /zosmf/restfiles/ds?dslevel=<dataset_name_pattern>
     /// - Parameters:

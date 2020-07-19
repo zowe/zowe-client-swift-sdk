@@ -1,6 +1,6 @@
 # Zowe Swift Client SDK
 
-> An iOS/iPadOS Swift-written static library for z/OSMF REST API
+> A macOS/iOS/iPadOS/tvOS/watchOS Swift-written library for z/OSMF REST API
 
 ![](https://img.shields.io/badge/license-EPL--2.0-blue) ![](https://img.shields.io/badge/version-0.1.0-yellow)
 
@@ -10,7 +10,7 @@ The Zowe Swift Client SDK is an open-source Swift package for z/OSMF REST API. I
 
 # Installation
 
-Fore more details on Zowe SDK debug version installation, follow this [INSTALL.md](INSTALL.md)
+Fore more details on Zowe Swift Client SDK debug version installation, follow this [INSTALL.md](INSTALL.md)
 
 # Quickstart
 

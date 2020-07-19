@@ -1,62 +1,42 @@
 # Zowe Swift Client SDK Installation Guide 
 
-> An iOS/iPadOS Swift-written static library for z/OSMF REST API 
+> An macOS/iOS/iPadOS/tvOS/watchOS Swift-written library for z/OSMF REST API 
 
 ![](https://img.shields.io/badge/license-EPL--2.0-blue) ![](https://img.shields.io/badge/version-0.1.0-yellow) 
-
-## Building Zowe SDK debug version 
-
-### Step 1 
-
-Download the latest <a href="https://apps.apple.com/us/app/xcode/id497799835" target="_blank">Xcode IDE</a> from Mac App Store and install it. 
-
-![Xcode IDE in Mac App Store](/../screenshots/Scrshots/install/ZoweClientSwiftSDK01.png?raw=true "Xcode IDE in Mac App Store") 
-
-### Step 2 
-
-Download <a href="archive/master.zip" target="_blank">zowe-client-swift-sdk</a> project, unzip it and double-click *zoweSDK.xcodeproj* file to open it in Xcode IDE. 
-
-![Zowe Client Swift SDK folder](/../screenshots/Scrshots/install/ZoweClientSwiftSDK02.png?raw=true "Zowe Client Swift SDK folder") 
-
-### Step 3 
-
-Xcode IDE opens Zowe SDK project. Click ▶ button in the upper-left corner of Xcode window to build Zowe SDK. The build process uses a special *zsh* run script to construct so-called "fat static library", which can be used on both iOS simulators and iPhone devices (i e under *x86_64* and *arm64* architecture). 
-
-![Zowe Client Swift SDK project](/../screenshots/Scrshots/install/ZoweClientSwiftSDK03.png?raw=true "Zowe Client Swift SDK project") 
-
-### Step 4
-
-The build should take about half a minute. After *Build succeeded* message, *zsh* run script should open Zowe SDK project folder with a new *zoweSDK.framework* folder created in it. You can now close Zowe SDK project in Xcode IDE.
-
-![Zowe Client Swift SDK build process](/../screenshots/Scrshots/install/ZoweClientSwiftSDK04.png?raw=true "Zowe Client Swift SDK build process") 
-
-![Zowe Client Swift SDK framework folder](/../screenshots/Scrshots/install/ZoweClientSwiftSDK05.png?raw=true "Zowe Client Swift SDK framework folder") 
 
 ## Adding Zowe SDK debug version to your mobile app 
 
 ### Step 1 
 
-Open your mobile application project in Xcode IDE. Drag and drop *zoweSDK.framework* from Zowe SDK folder into Xcode window, so that it falls right under your mobile application's header icon in the Project Navigator to the left.
+Open your macOS or iOS or iPadOS or tvOS or watchOS application project in Xcode IDE. From menu select *File* > *Swift Packages* > *Add Package Dependency...*
 
-![Add Zowe Client Swift SDK to your mobile application project](/../screenshots/Scrshots/install/ZoweClientSwiftSDK06.png?raw=true "Add Zowe Client Swift SDK to your mobile application project") 
+![Adding Zowe Client Swift SDK as a dependency to your mobile application project](/../screenshots/Scrshots/install/ZoweClientSwiftSDK01.png?raw=true "Adding Zowe Client Swift SDK as a dependency to your mobile application project") 
 
 ### Step 2 
 
-When *Choose options for adding these files* prompt shows up, make sure *Copy items if needed* box is checked, *Create groups* radio button is selected and your mobile application target box is checked as well.
+Once *Choose Package Repository* prompt shows up, paste `https://github.com/zowe/zowe-client-swift-sdk`  into package repository URL text field. Click *Next*. 
 
-![Choose options for adding these files prompt](/../screenshots/Scrshots/install/ZoweClientSwiftSDK07.png?raw=true "Choose options for adding these files prompt") 
+![Choose package repository prompt](/../screenshots/Scrshots/install/ZoweClientSwiftSDK02.png?raw=true "Choose package repository prompt") 
 
 ### Step 3 
 
-Click on your mobile application's header icon in the Project Navigator to the left. Then choose your mobile application icon under *TARGETS* part of the Project and targets list. Make certain *zoweSDK.framework* is present within *Frameworks, Libraries, and Embedded Content* section at the bottom. If not, click on + to select and add it manually. 
+When prompted *Choose Package Options*, choose the appropriate version, branch or commit to install from. Click *Next*.  
 
-![Zowe SDK in Frameworks, Libraries, and Embedded Content target section](/../screenshots/Scrshots/install/ZoweClientSwiftSDK08.png?raw=true "Zowe SDK in Frameworks, Libraries, and Embedded Content target section") 
+![Choose package options prompt](/../screenshots/Scrshots/install/ZoweClientSwiftSDK03.png?raw=true "Choose package options prompt") 
 
 ### Step 4 
 
-Click on *Build Settings* tab header and scroll to the very bottom. In *Swift Compiler - Search Paths* section, click on the right column of *Import Paths* field, type `$(PROJECT_DIR)/zoweSDK.framework` and press enter. 
+Swift Package Manager should start adding Zowe SDK to your application project. 
 
-![Zowe SDK path in Build Settings/Swift Compiler - Search Paths/Import Paths field](/../screenshots/Scrshots/install/ZoweClientSwiftSDK09.png?raw=true "Zowe SDK path in Build Settings/Swift Compiler - Search Paths/Import Paths field") 
+![Resolving Zowe Client Swift SDK prompt](/../screenshots/Scrshots/install/ZoweClientSwiftSDK04.png?raw=true "Resolving Zowe Client Swift SDK prompt") 
+
+When it finishes, make sure *zoweSDK* box is checked for your application. Click *Finish*.
+
+![Choose package products and targets prompt](/../screenshots/Scrshots/install/ZoweClientSwiftSDK05.png?raw=true "Choose package products and targets prompt") 
+
+That's it! Zowe Client Swift SDK has just been added as a dependency to your application. You're good to go now. 
+
+![Zowe Client Swift SDK in Swift Package Dependencies](/../screenshots/Scrshots/install/ZoweClientSwiftSDK06.png?raw=true "Zowe Client Swift SDK in Swift Package Dependencies") 
 
 ## Using Zowe SDK debug version in your mobile app 
 

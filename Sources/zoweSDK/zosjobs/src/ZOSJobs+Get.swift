@@ -12,7 +12,7 @@
 
 import Foundation
 
-public extension ZOSJobs {
+extension ZOSJobs {
     
     /// Launches request to to obtain the status of a batch job on z/OS with the following HTTP method and URI path: GET /zosmf/restjobs/jobs/<jobname>/<jobid>[?<parms>]
     /// - Parameters:

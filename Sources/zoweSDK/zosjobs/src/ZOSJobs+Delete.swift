@@ -12,7 +12,7 @@
 
 import Foundation
 
-public extension ZOSJobs {
+extension ZOSJobs {
     
     /// Launches request to cancel a job and purge its output with the following HTTP method and URI path: DELETE /zosmf/restjobs/jobs/<jobname>/<jobid>
     /// - Parameters:

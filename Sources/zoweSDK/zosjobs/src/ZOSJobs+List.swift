@@ -12,7 +12,7 @@
 
 import Foundation
 
-public extension ZOSJobs {
+extension ZOSJobs {
     
     /// Launches request to retrieve a list of jobs on JES for an owner, prefix, max-jobs and/or user-correlator with the following HTTP method and URI path: GET /zosmf/restjobs/jobs[?<parms>]
     /// - Parameters:
@@ -33,7 +33,7 @@ public extension ZOSJobs {
     ) {
         var customArgs = requestArguments
         var queryItems = [
-            URLQueryItem(name: "owner", value: owner ?? zosmfUser),
+            URLQueryItem(name: "owner", value: owner ?? connection.zosmfUser),
             URLQueryItem(name: "prefix", value: prefix),
             URLQueryItem(name: "max-jobs", value: String(maxJobs))
         ]

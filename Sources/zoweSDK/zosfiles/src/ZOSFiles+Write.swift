@@ -12,7 +12,7 @@
 
 import Foundation
 
-public extension ZOSFiles {
+extension ZOSFiles {
     
     /// Launches request to write the contents to an existing sequential data set, or a member of a partitioned data set (PDS or PDSE) with the following HTTP method and URI path: PUT /zosmf/restfiles/ds/<data_set_name>[(<member_name>)]
     /// - Parameters:

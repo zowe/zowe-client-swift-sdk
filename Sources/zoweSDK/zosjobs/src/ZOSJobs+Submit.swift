@@ -12,7 +12,7 @@
 
 import Foundation
 
-public extension ZOSJobs {
+extension ZOSJobs {
     
     /// Launches request to submit a job to run on z/OS from specified file location with the following HTTP method and URI path: PUT /zosmf/restjobs/jobs[/-<JESB>]
     /// - Parameters:

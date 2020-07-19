@@ -83,22 +83,13 @@ internal class ZOSRequestHandler: NSObject, URLSessionDelegate {
                 return
             }
         }
-        log(request: request)
+        
         let task = session.dataTask(with: request, completionHandler: { [weak self] data, response, error in
             let validatedResponse = self?.validateResponse(data, response, error)
             onCompletion(validatedResponse ?? "No response")
         })
         
         task.resume()
-    }
-    
-    /// Temporary logging method
-    /// - Parameter request: URLRequest object to log
-    func log(request: URLRequest) {
-        print("\(request.httpMethod!) \(request.url!.absoluteString)")
-        if let httpBody = request.httpBody {
-            print("HTTP Body: \(String(data: httpBody, encoding: .utf8)!)")
-        }
     }
     
     // MARK: - ZOSRequestHandler private methods

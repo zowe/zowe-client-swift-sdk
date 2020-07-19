@@ -12,30 +12,13 @@
 
 import Foundation
 
-/// Primary class for Zowe Client Swift SDK
-public class ZoweSDK {
+/// Primary struct for Zowe Client Swift SDK
+public struct ZoweSDK {
     
-    // MARK: - ZoweSDK private members
+    // MARK: - ZoweSDK internal members
     
     /// z/OS REST API connection object
-    private let connection: ZOSConnection
-    
-    // MARK: - ZoweSDK public members
-    
-    /// z/OS Console REST API object
-    //public let console: ZOSConsole
-    
-    /// z/OS Files REST API class
-    public let files: ZOSFiles
-    
-    /// z/OS Jobs REST API class
-    public let jobs: ZOSJobs
-    
-    /// z/OS TSO REST API class
-    //public let tso: ZOSTso
-    
-    /// z/OSMF REST API information retrieval service object
-    public let zosmf: Zosmf
+    internal let connection: ZOSConnection
     
     // MARK: - ZoweSDK constructors
     
@@ -45,11 +28,6 @@ public class ZoweSDK {
         _ connection: ZOSConnection
     ) {
         self.connection = connection
-        //console = ZOSConsole(connection)
-        files = ZOSFiles(connection)
-        jobs = ZOSJobs(connection)
-        //tso = ZOSTso(connection)
-        zosmf = Zosmf(connection)
     }
     
     /// ZoweSDK object convenience constructor with Zowe host address and credentials
@@ -57,7 +35,7 @@ public class ZoweSDK {
     ///   - zosmfHost: The z/OSMF host address (nil by default)
     ///   - zosmfUser: The user for the z/OSMF REST API (nil by default)
     ///   - zosmfPassword: The password for the z/OSMF REST API (nil by default)
-    public convenience init(
+    public init(
         zosmfHost: String,
         zosmfUser: String,
         zosmfPassword: String
@@ -73,7 +51,7 @@ public class ZoweSDK {
     /// ZoweSDK object convenience constructor with Zowe profile
     /// - Parameters:
     ///   - zosmfProfile: The Zowe z/OSMF profile name in case it already exists (nil by default)
-    public convenience init(
+    public init(
         zosmfProfile: String
     ) {
         let connection = ZosmfProfile(

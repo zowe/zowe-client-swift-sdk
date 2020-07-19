@@ -12,7 +12,7 @@
 
 import Foundation
 
-public extension ZOSFiles {
+extension ZOSFiles {
     
     /// Launches request to create sequential or partitioned data sets on a z/OS system with the following HTTP method and URI path: POST /zosmf/restfiles/ds/<dataset_name>
     /// - Parameters:

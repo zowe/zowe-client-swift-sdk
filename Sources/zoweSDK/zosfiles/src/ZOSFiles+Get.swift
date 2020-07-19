@@ -12,7 +12,7 @@
 
 import Foundation
 
-public extension ZOSFiles {
+extension ZOSFiles {
     
     /// Launches request to retrieve the contents of a sequential data set, or a member of a partitioned data set (PDS or PDSE) with the following HTTP method and URI path: GET /zosmf/restfiles/ds/<data_set_name>[(<member_name>)]
     /// - Parameters:

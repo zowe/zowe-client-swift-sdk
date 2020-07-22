@@ -30,7 +30,7 @@ let z = ZoweSDK(
     password: "<zosmf password>")
 ```
 
-The SDK supports both manual authentication and Zowe z/OSMF mobile profiles. To create a Zowe z/OSMF mobile profile, use a regular <a href="https://developer.apple.com/documentation/swift/dictionary" target="_blank">Dictionary</a> and store it in <a href="https://developer.apple.com/documentation/foundation/userdefaults" target="_blank">UserDefaults</a> under the key with your chosen profile name. 
+The SDK supports both manual authentication and Zowe z/OSMF mobile profiles. To create a Zowe z/OSMF mobile profile, use a regular [Dictionary](https://developer.apple.com/documentation/swift/dictionary) and store it in [UserDefaults](https://developer.apple.com/documentation/foundation/userdefaults) under the key with your chosen profile name. 
 
 ```swift
 let zoweProfile = [
@@ -65,7 +65,7 @@ z.zosmf.getInfo() { response in
 }
 ```
 
-Fore more details on z/OSMF for Zowe SDK package usage, follow this [README.md](zoweSDK/packages/zosmf/README.md)
+Fore more details on z/OSMF for Zowe SDK package usage, follow this [README.md](Sources/ZoweSDK/zosmf/README.md)
 
 ## Data sets 
 
@@ -81,7 +81,7 @@ z.files.createDsn(
 }
 ```
 
-Fore more details on z/OS Files for Zowe SDK package usage, follow this [README.md](zoweSDK/packages/zosfiles/README.md)
+Fore more details on z/OS Files for Zowe SDK package usage, follow this [README.md](Sources/ZoweSDK/zosfiles/README.md)
 
 ## Jobs 
 
@@ -98,7 +98,7 @@ z.jobs.listJobs(
 }
 ```
 
-Fore more details on z/OS Jobs for Zowe SDK package usage, follow this [README.md](zoweSDK/packages/zosjobs/README.md)
+Fore more details on z/OS Jobs for Zowe SDK package usage, follow this [README.md](Sources/ZoweSDK/zosjobs/README.md)
 
 # Acknowledgments
 

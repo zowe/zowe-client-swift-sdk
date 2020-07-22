@@ -26,7 +26,7 @@ let z = ZoweSDK(
     password: "<zosmf password>")
 ```
 
-The SDK supports both manual authentication and Zowe z/OSMF mobile profiles. To create a Zowe z/OSMF mobile profile, use a regular <a href="https://developer.apple.com/documentation/swift/dictionary" target="_blank">Dictionary</a> and store it in <a href="https://developer.apple.com/documentation/foundation/userdefaults" target="_blank">UserDefaults</a> under the key with your chosen profile name. 
+The SDK supports both manual authentication and Zowe z/OSMF mobile profiles. To create a Zowe z/OSMF mobile profile, use a regular [Dictionary](https://developer.apple.com/documentation/swift/dictionary) and store it in [UserDefaults](https://developer.apple.com/documentation/foundation/userdefaults) under the key with your chosen profile name. 
 
 ```swift
 let zoweProfile = [
@@ -61,7 +61,7 @@ z.zosmf.getInfo() { response in
 
 ## z/OSMF response usage
 
-The result can be either a JSON containing z/OSMF information or an error description. To get a necessary object, convert the response to <a href="https://developer.apple.com/documentation/foundation/data" target="_blank">Data</a> format and use <a href="https://developer.apple.com/documentation/foundation/jsondecoder" target="_blank">JSONDecoder</a> to decode it respectively: 
+The result can be either a JSON containing z/OSMF information or an error description. To get a necessary object, convert the response to [Data](https://developer.apple.com/documentation/foundation/data) format and use [JSONDecoder](https://developer.apple.com/documentation/foundation/jsondecoder) to decode it respectively: 
 
 ```swift
 z.zosmf.getInfo() { response in 

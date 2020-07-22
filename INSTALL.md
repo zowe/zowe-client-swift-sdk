@@ -39,9 +39,17 @@ When it finishes, make sure *ZoweSDK* box is checked for your application. Click
 
 ![Choose package products and targets prompt](/../screenshots/Scrshots/install/ZoweClientSwiftSDK05.png?raw=true "Choose package products and targets prompt") 
 
+> **Important**: If you add Zowe Swift Client SDK to your **watchOS** application, make certain you select your application's **WatchKit Extension** target under *Add to Target* column title. 
+
+![Selecting your watchOS application's WatchKit Extension target](/../screenshots/Scrshots/install/ZoweClientSwiftSDK06.png?raw=true "Selecting your watchOS application's WatchKit Extension target") 
+
+> **Important**: If you add Zowe Swift Client SDK to your **macOS** application and the application is [sandboxed](https://developer.apple.com/documentation/security/app_sandbox) (which is default by Apple), make certain you enable [com.apple.security.network.client](https://developer.apple.com/documentation/bundleresources/entitlements/com_apple_security_network_client) property list key in your application's entitlements. This will allow your **macOS** application to open outgoing network connections. To do it, select **<your application name>.entitlements** file in the Project Navigator to the left, click ➕ under *Key* column and type `com.apple.security.network.client` into the new text field shown up. Then select **Boolean** under *Type* column and **YES** under *Value* column. 
+
+![Adding com.apple.security.network.client property list key to application entitlements](/../screenshots/Scrshots/install/ZoweClientSwiftSDK07.png?raw=true "Adding com.apple.security.network.client property list key to application entitlements") 
+
 Zowe Swift Client SDK has just been added as a dependency to your application. 
 
-![Zowe Swift Client SDK in Swift Package Dependencies](/../screenshots/Scrshots/install/ZoweClientSwiftSDK06.png?raw=true "Zowe Swift Client SDK in Swift Package Dependencies") 
+![Zowe Swift Client SDK in Swift Package Dependencies](/../screenshots/Scrshots/install/ZoweClientSwiftSDK08.png?raw=true "Zowe Swift Client SDK in Swift Package Dependencies") 
 
 ## Using Zowe SDK debug version in your mobile app 
 
@@ -53,7 +61,7 @@ Click on your mobile application's `ViewController.swift` class in the Project N
 import ZoweSDK
 ```
 
-![Import Zowe SDK in your mobile application ViewController class](/../screenshots/Scrshots/install/ZoweClientSwiftSDK10.png?raw=true "Import Zowe SDK in your mobile application ViewController class") 
+![Import Zowe SDK in your mobile application ViewController class](/../screenshots/Scrshots/install/ZoweClientSwiftSDK09.png?raw=true "Import Zowe SDK in your mobile application ViewController class") 
 
 ### Step 2 
 
@@ -75,18 +83,18 @@ z.zosmf.getInfo() { response in
 }
 ```
 
-![Add Zowe SDK constructor and the first method to your mobile application ViewController class](/../screenshots/Scrshots/install/ZoweClientSwiftSDK11.png?raw=true "Add Zowe SDK constructor and the first method to your mobile application ViewController class") 
+![Add Zowe SDK constructor and the first method to your mobile application ViewController class](/../screenshots/Scrshots/install/ZoweClientSwiftSDK10.png?raw=true "Add Zowe SDK constructor and the first method to your mobile application ViewController class") 
 
 ### Step 3 
 
 Click on *Set the active scheme* to expand the Devices and iOS simulators list. Select the appropriate iOS simulator for you mobile application. 
 
-![Select the appropriate iOS simulator from the Devices and iOS simulators list](/../screenshots/Scrshots/install/ZoweClientSwiftSDK12.png?raw=true "Select the appropriate iOS simulator from the Devices and iOS simulators list") 
+![Select the appropriate iOS simulator from the Devices and iOS simulators list](/../screenshots/Scrshots/install/ZoweClientSwiftSDK11.png?raw=true "Select the appropriate iOS simulator from the Devices and iOS simulators list") 
 
 ### Step 4 
 
 Click ▶ to build and run your mobile application on the selected iOS simulator. You should now see the log printed into the Debug area at the bottom of your Xcode's window. 
 
-![Build and run your mobile application with Zowe SDK on the appropriate iOS simulator](/../screenshots/Scrshots/install/ZoweClientSwiftSDK13.png?raw=true "Build and run your mobile application with Zowe SDK on the appropriate iOS simulator") 
+![Build and run your mobile application with Zowe SDK on the appropriate iOS simulator](/../screenshots/Scrshots/install/ZoweClientSwiftSDK12.png?raw=true "Build and run your mobile application with Zowe SDK on the appropriate iOS simulator") 
 
 Fore more details on Zowe SDK usage, follow this [README.md](README.md)

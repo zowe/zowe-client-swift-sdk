@@ -30,32 +30,35 @@ public struct ZoweSDK {
         self.connection = connection
     }
     
-    /// ZoweSDK object convenience constructor with Zowe host address and credentials
+    /// ZoweSDK object convenience constructor with z/OSMF host, port and credentials
     /// - Parameters:
-    ///   - zosmfHost: The z/OSMF host address (nil by default)
-    ///   - zosmfUser: The user for the z/OSMF REST API (nil by default)
-    ///   - zosmfPassword: The password for the z/OSMF REST API (nil by default)
+    ///   - host: The host for the z/OSMF REST API
+    ///   - port: The port for the z/OSMF REST API (nil by default)
+    ///   - user: The user for the z/OSMF REST API
+    ///   - password: The password for the z/OSMF REST API
     public init(
-        zosmfHost: String,
-        zosmfUser: String,
-        zosmfPassword: String
+        host: String,
+        port: String? = nil,
+        user: String,
+        password: String
     ) {
         let connection = ZOSConnection(
-            zosmfHost: zosmfHost,
-            zosmfUser: zosmfUser,
-            zosmfPassword: zosmfPassword
+            host: host,
+            port: port,
+            user: user,
+            password: password
         )
         self.init(connection)
     }
     
     /// ZoweSDK object convenience constructor with Zowe profile
     /// - Parameters:
-    ///   - zosmfProfile: The Zowe z/OSMF profile name in case it already exists (nil by default)
+    ///   - profileName: The Zowe profile name 
     public init(
-        zosmfProfile: String
+        profileName: String
     ) {
         let connection = ZosmfProfile(
-            profileName: zosmfProfile
+            profileName: profileName
         ).load()
         self.init(connection)
     }

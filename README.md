@@ -14,27 +14,28 @@ Fore more details on Zowe Swift Client SDK debug version installation, follow th
 
 # Quickstart
 
-Start by importing the **zoweSDK** class. 
+Start by importing the **ZoweSDK** class. 
 
 ```swift
-import zoweSDK
+import ZoweSDK
 ```
 
 Then create an object that will be the handler for all z/OSMF requests. 
 
 ```swift
 let z = ZoweSDK(
-    zosmfHost: "<host address>", 
-    zosmfUser: "<zosmf user>", 
-    zosmfPassword: "<zosmf password>")
+    host: "<zosmf host>",
+    port: "<zosmf port>",
+    user: "<zosmf user>", 
+    password: "<zosmf password>")
 ```
 
 The SDK supports both manual authentication and Zowe z/OSMF mobile profiles. To create a Zowe z/OSMF mobile profile, use a regular <a href="https://developer.apple.com/documentation/swift/dictionary" target="_blank">Dictionary</a> and store it in <a href="https://developer.apple.com/documentation/foundation/userdefaults" target="_blank">UserDefaults</a> under the key with your chosen profile name. 
 
 ```swift
 let zoweProfile = [
-    "host": "<host address>", 
-    "port": "<host port>", 
+    "host": "<zosmf host>", 
+    "port": "<zosmf port>", 
     "user": "<zosmf user>", 
     "password": "<zosmf password>"]
 UserDefaults.standard.set(zoweProfile, forKey: "<profile name>")
@@ -43,7 +44,7 @@ UserDefaults.standard.set(zoweProfile, forKey: "<profile name>")
 Then to use a Zowe z/OSMF profile, simply inform the profile name while creating the object.
 
 ```swift
-let z = ZoweSDK(zosmfProfile: "<profile name>")
+let z = ZoweSDK(profileName: "<profile name>")
 ```
 
 # Available options

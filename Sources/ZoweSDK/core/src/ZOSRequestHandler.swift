@@ -83,13 +83,22 @@ internal class ZOSRequestHandler: NSObject, URLSessionDelegate {
                 return
             }
         }
-        
+        log(request: request)
         let task = session.dataTask(with: request, completionHandler: { [weak self] data, response, error in
             let validatedResponse = self?.validateResponse(data, response, error)
             onCompletion(validatedResponse ?? "No response")
         })
         
         task.resume()
+    }
+    
+    /// Temporary logging method
+    /// - Parameter request: URLRequest object to log
+    func log(request: URLRequest) {
+        print("\(request.httpMethod!) \(request.url!.absoluteString)")
+        if let httpBody = request.httpBody {
+            print("HTTP Body: \(String(data: httpBody, encoding: .utf8)!)")
+        }
     }
     
     // MARK: - ZOSRequestHandler private methods
@@ -134,7 +143,7 @@ internal class ZOSRequestHandler: NSObject, URLSessionDelegate {
     ) {
         let protectionSpace = challenge.protectionSpace
         if protectionSpace.authenticationMethod == NSURLAuthenticationMethodServerTrust {
-            guard connection.zosmfHost.contains(protectionSpace.host),
+            guard connection.host.contains(protectionSpace.host),
                 let serverTrust = protectionSpace.serverTrust else {
                 completionHandler(.performDefaultHandling, nil)
                 return
@@ -145,8 +154,8 @@ internal class ZOSRequestHandler: NSObject, URLSessionDelegate {
         }
         
         if protectionSpace.authenticationMethod == NSURLAuthenticationMethodClientCertificate {
-            let clientCredentials = URLCredential(user: connection.zosmfUser,
-                                                  password: connection.zosmfPassword,
+            let clientCredentials = URLCredential(user: connection.user,
+                                                  password: connection.password,
                                                   persistence: .forSession)
             completionHandler(.useCredential, clientCredentials)
         }

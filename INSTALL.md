@@ -8,9 +8,9 @@
 
 ### Step 1 
 
-Open your macOS or iOS or iPadOS or tvOS or watchOS application project in Xcode IDE. From menu select *File* > *Swift Packages* > *Add Package Dependency...*
+Open your **macOS** or **iOS** or **iPadOS** or **tvOS** or **watchOS** application project in Xcode IDE. From menu select *File* > *Swift Packages* > *Add Package Dependency...*
 
-![Adding Zowe Client Swift SDK as a dependency to your mobile application project](/../screenshots/Scrshots/install/ZoweClientSwiftSDK01.png?raw=true "Adding Zowe Client Swift SDK as a dependency to your mobile application project") 
+![Adding Zowe Swift Client SDK as a dependency to your mobile application project](/../screenshots/Scrshots/install/ZoweClientSwiftSDK01.png?raw=true "Adding Zowe Swift Client SDK as a dependency to your mobile application project") 
 
 ### Step 2 
 
@@ -20,7 +20,12 @@ Once *Choose Package Repository* prompt shows up, paste `https://github.com/zowe
 
 ### Step 3 
 
-When prompted *Choose Package Options*, choose the appropriate version, branch or commit to install from. Click *Next*.  
+When prompted *Choose Package Options*, choose either:
+- the appropriate version (*Up to Next Major* | *Up to Next Minor* | *Range* | *Exact*, then enter version numbers, i e `1.0.0` < `2.0.0`), or 
+- branch (i e `master`), or 
+- commit (a valid SHA1 hash - must be 40 characters, i e `a854b3b7792df6ad34a2cd93f33856ecd9f38f0d`) to install from. 
+
+Click *Next*.  
 
 ![Choose package options prompt](/../screenshots/Scrshots/install/ZoweClientSwiftSDK03.png?raw=true "Choose package options prompt") 
 
@@ -28,24 +33,24 @@ When prompted *Choose Package Options*, choose the appropriate version, branch o
 
 Swift Package Manager should start adding Zowe SDK to your application project. 
 
-![Resolving Zowe Client Swift SDK prompt](/../screenshots/Scrshots/install/ZoweClientSwiftSDK04.png?raw=true "Resolving Zowe Client Swift SDK prompt") 
+![Resolving Zowe Swift Client SDK prompt](/../screenshots/Scrshots/install/ZoweClientSwiftSDK04.png?raw=true "Resolving Zowe Swift Client SDK prompt") 
 
-When it finishes, make sure *zoweSDK* box is checked for your application. Click *Finish*.
+When it finishes, make sure *ZoweSDK* box is checked for your application. Click *Finish*.
 
 ![Choose package products and targets prompt](/../screenshots/Scrshots/install/ZoweClientSwiftSDK05.png?raw=true "Choose package products and targets prompt") 
 
-That's it! Zowe Client Swift SDK has just been added as a dependency to your application. You're good to go now. 
+Zowe Swift Client SDK has just been added as a dependency to your application. 
 
-![Zowe Client Swift SDK in Swift Package Dependencies](/../screenshots/Scrshots/install/ZoweClientSwiftSDK06.png?raw=true "Zowe Client Swift SDK in Swift Package Dependencies") 
+![Zowe Swift Client SDK in Swift Package Dependencies](/../screenshots/Scrshots/install/ZoweClientSwiftSDK06.png?raw=true "Zowe Swift Client SDK in Swift Package Dependencies") 
 
 ## Using Zowe SDK debug version in your mobile app 
 
 ### Step 1 
 
-Click on your mobile application's `ViewController.swift` class in the Project Navogator to the left and start by importing the **zoweSDK** class. 
+Click on your mobile application's `ViewController.swift` class in the Project Navigator to the left and start by importing the **ZoweSDK** class. 
 
 ```swift
-import zoweSDK
+import ZoweSDK
 ```
 
 ![Import Zowe SDK in your mobile application ViewController class](/../screenshots/Scrshots/install/ZoweClientSwiftSDK10.png?raw=true "Import Zowe SDK in your mobile application ViewController class") 
@@ -56,9 +61,10 @@ Then in `viewDidLoad` method, create an object that will be the handler for all 
 
 ```swift
 let z = ZoweSDK(
-    zosmfHost: "<host address>", 
-    zosmfUser: "<zosmf user>", 
-    zosmfPassword: "<zosmf password>")
+    host: "<zosmf host>", 
+    port: "<zosmf port>", 
+    user: "<zosmf user>", 
+    password: "<zosmf password>")
 ```
 
 Add the first Zowe SDK method to retrieve information about z/﻿OSMF on a particular z/OS system and print the log into Xcode's Debug area:

@@ -32,7 +32,7 @@ public class ZOSApi {
     /// Base64 encoded credentials in <mainframeId>:<password> format
     /// - See Also: [Using the z/OSMF REST services :: Basic authentication](https://www.ibm.com/support/knowledgecenter/SSLTBW_2.4.0/com.ibm.zos.v2r4.izua700/IZUHPINFO_RESTServices.htm#IZUHPINFO_RESTServices__basicauth)
     private var encodedCredentials: String {
-        let credentials = connection.zosmfUser + ":" + connection.zosmfPassword
+        let credentials = connection.user + ":" + connection.password
         let credentialsData = credentials.data(using: .utf8)
         let credentialsOptions = Data.Base64EncodingOptions(rawValue: 0)
         guard let credentialsEncoded = credentialsData?.base64EncodedString(options: credentialsOptions) else {
@@ -49,11 +49,10 @@ public class ZOSApi {
     
     /// z/OS REST API full URL endpoint
     internal var requestEndpoint: URL {
-        let zosmfBaseUrl = URL(string: connection.zosmfHost)
         var urlComponents = URLComponents()
         urlComponents.scheme = "https"
-        urlComponents.host = zosmfBaseUrl?.host
-        urlComponents.port = zosmfBaseUrl?.port
+        urlComponents.percentEncodedHost = connection.host
+        urlComponents.port = Int(connection.port ?? "")
         urlComponents.path = defaultServiceUrl
         guard let verifiedUrl = urlComponents.url else {
             fatalError(ZOSError.invalidUrlAddress.errorDescription!)

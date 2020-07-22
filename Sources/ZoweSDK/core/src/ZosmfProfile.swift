@@ -39,23 +39,22 @@ internal struct ZosmfProfile {
             fatalError(ZOSError.zoweProfile(name: profileName).errorDescription!)
         }
         
-        guard var zosmfHost = profileYaml[RequiredFields.host.rawValue] as? String,
-            let zosmfUser = profileYaml[RequiredFields.user.rawValue] as? String,
-            let zosmfPassword = profileYaml[RequiredFields.password.rawValue] as? String else {
+        guard let host = profileYaml[RequiredFields.host.rawValue] as? String,
+            let user = profileYaml[RequiredFields.user.rawValue] as? String,
+            let password = profileYaml[RequiredFields.password.rawValue] as? String else {
             let requiredFields = Set(RequiredFields.allCases.map( { $0.rawValue } ))
             let profileYamlFields = Set(profileYaml.keys)
             let absentFields = requiredFields.subtracting(profileYamlFields)
             fatalError(ZOSError.zoweProfileFields(keys: absentFields).errorDescription!)
         }
         
-        if let zosmfPort = profileYaml[OptionalFields.port.rawValue] as? String {
-            zosmfHost += ":" + zosmfPort
-        }
+        let port = profileYaml[OptionalFields.port.rawValue] as? String
         
         return ZOSConnection(
-            zosmfHost: zosmfHost,
-            zosmfUser: zosmfUser,
-            zosmfPassword: zosmfPassword
+            host: host,
+            port: port,
+            user: user,
+            password: password
         )
     }
 }

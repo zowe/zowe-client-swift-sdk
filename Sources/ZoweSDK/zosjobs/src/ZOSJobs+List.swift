@@ -33,7 +33,7 @@ extension ZOSJobs {
     ) {
         var customArgs = requestArguments
         var queryItems = [
-            URLQueryItem(name: "owner", value: owner ?? connection.zosmfUser),
+            URLQueryItem(name: "owner", value: owner ?? connection.user),
             URLQueryItem(name: "prefix", value: prefix),
             URLQueryItem(name: "max-jobs", value: String(maxJobs))
         ]

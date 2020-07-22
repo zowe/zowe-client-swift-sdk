@@ -33,7 +33,7 @@ internal enum ZOSError: LocalizedError {
         case .base64EncodedString:
             return "Base64 credentials encoding error"
         case .invalidUrlAddress:
-            return "Invalid URL address error"
+            return "Invalid URL address error: make sure URL conforms to RFC 1808 and has correct syntax <scheme>://<net_loc>/<path>;<params>?<query>#<fragment>"
         case let .invalidHttpBody(reason):
             return "HTTP request body error: " + reason
         case let .httpStatus(code):
